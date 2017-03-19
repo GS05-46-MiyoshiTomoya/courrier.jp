@@ -50,8 +50,6 @@ try {
         $articles .= '<button class="action action--button action--buy">';
         $articles .= '<i class="fa fa-heart"></i>';
         $articles .= '</button>';
-//        $articles .= '<input type="hidden" name="article" value="'.$result['id'].'">';
-//        $articles .= '<input type="hidden" name="article_user_id" value="'.$result['user_id'].'">';
         $articles .= '<input type="hidden" name="favorite">';
         $articles .= '<input type="hidden" name="coment">';
         $articles .= '</div>';
