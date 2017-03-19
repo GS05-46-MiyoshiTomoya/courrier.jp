@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62905095-ff32-469d-b222-2b367d99e7e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/single.html" afterPath="$PROJECT_DIR$/single.html" />
     </list>
     <ignored path="courrier.jp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,15 +26,15 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="150" column="14" selection-start-line="150" selection-start-column="14" selection-end-line="150" selection-end-column="14" />
+            <state relative-caret-position="493">
+              <caret line="125" column="10" selection-start-line="125" selection-start-column="10" selection-end-line="125" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1489905667000" expanded="true" signature="176:183" ph="SELECT * fro... articles" />
-                <marker date="1489905667000" expanded="true" signature="176:773" ph="SELECT a.id articles" />
-                <marker date="1489905667000" expanded="true" signature="580:689" ph="select artic... coments" />
-                <marker date="1489905667000" expanded="true" signature="3404:3423" ph="..." />
+                <marker date="1489908091000" expanded="true" signature="176:183" ph="SELECT * fro... articles" />
+                <marker date="1489908091000" expanded="true" signature="176:773" ph="SELECT a.id articles" />
+                <marker date="1489908091000" expanded="true" signature="580:689" ph="select artic... coments" />
+                <marker date="1489908091000" expanded="true" signature="3404:3423" ph="..." />
               </folding>
             </state>
           </provider>
@@ -330,12 +328,12 @@
       <option name="presentableId" value="Default" />
       <updated>1489846065742</updated>
       <workItem from="1489846067012" duration="14860000" />
-      <workItem from="1489898150199" duration="4135000" />
+      <workItem from="1489898150199" duration="4493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18995000" />
+    <option name="totallyTimeSpent" value="19353000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -391,10 +389,10 @@
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1489905667000" expanded="true" signature="176:183" ph="SELECT * fro... articles" />
-            <marker date="1489905667000" expanded="true" signature="176:773" ph="SELECT a.id articles" />
-            <marker date="1489905667000" expanded="true" signature="580:689" ph="select artic... coments" />
-            <marker date="1489905667000" expanded="true" signature="3404:3423" ph="..." />
+            <marker date="1489908091000" expanded="true" signature="176:183" ph="SELECT * fro... articles" />
+            <marker date="1489908091000" expanded="true" signature="176:773" ph="SELECT a.id articles" />
+            <marker date="1489908091000" expanded="true" signature="580:689" ph="select artic... coments" />
+            <marker date="1489908091000" expanded="true" signature="3404:3423" ph="..." />
           </folding>
         </state>
       </provider>
@@ -640,15 +638,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="150" column="14" selection-start-line="150" selection-start-column="14" selection-end-line="150" selection-end-column="14" />
+        <state relative-caret-position="493">
+          <caret line="125" column="10" selection-start-line="125" selection-start-column="10" selection-end-line="125" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1489905667000" expanded="true" signature="176:183" ph="SELECT * fro... articles" />
-            <marker date="1489905667000" expanded="true" signature="176:773" ph="SELECT a.id articles" />
-            <marker date="1489905667000" expanded="true" signature="580:689" ph="select artic... coments" />
-            <marker date="1489905667000" expanded="true" signature="3404:3423" ph="..." />
+            <marker date="1489908091000" expanded="true" signature="176:183" ph="SELECT * fro... articles" />
+            <marker date="1489908091000" expanded="true" signature="176:773" ph="SELECT a.id articles" />
+            <marker date="1489908091000" expanded="true" signature="580:689" ph="select artic... coments" />
+            <marker date="1489908091000" expanded="true" signature="3404:3423" ph="..." />
           </folding>
         </state>
       </provider>

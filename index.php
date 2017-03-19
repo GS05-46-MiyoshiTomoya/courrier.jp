@@ -118,16 +118,11 @@ try {
     <div class="filter">
         <span class="filter__label">CATEGORY: </span>
         <button class="action filter__item filter__item--selected" data-filter="*">All</button>
-        <button class="action filter__item" data-filter=".jackets"><i class="icon icon--jacket"></i><span
-                class="action__text">WORLD</span></button>
-        <button class="action filter__item" data-filter=".shirts"><i class="icon icon--shirt"></i><span
-                class="action__text">NIPPON</span></button>
-        <button class="action filter__item" data-filter=".dresses"><i class="icon icon--dress"></i><span
-                class="action__text">BUSINESS</span></button>
-        <button class="action filter__item" data-filter=".trousers"><i class="icon icon--trousers"></i><span
-                class="action__text">CULTURE</span></button>
-        <button class="action filter__item" data-filter=".shoes"><i class="icon icon--shoe"></i><span
-                class="action__text">TRABEL</span></button>
+        <button class="action filter__item" data-filter=".jackets"><span class="action__text">WORLD</span></button>
+        <button class="action filter__item" data-filter=".shirts"><span class="action__text">NIPPON</span></button>
+        <button class="action filter__item" data-filter=".dresses"><span class="action__text">BUSINESS</span></button>
+        <button class="action filter__item" data-filter=".trousers"><span class="action__text">CULTURE</span></button>
+        <button class="action filter__item" data-filter=".shoes"><span class="action__text">TRABEL</span></button>
     </div>
     <button class="cart">
         <i class="cart__icon fa fa-heart"></i>
