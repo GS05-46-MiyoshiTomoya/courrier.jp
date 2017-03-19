@@ -274,7 +274,8 @@ body.global01 ul.gNavi a.gNavi01, body.global02 ul.gNavi a.gNavi02, body.global0
 
 .no-touch .grid__sizer,
 .no-touch .grid__item {
-	padding: .75em .75em 1.25em;
+	/*padding: .75em .75em 1.25em;*/
+	padding: .3em .3em .3em;
 }
 
 .grid--loading .grid__item {
@@ -304,7 +305,7 @@ body.global01 ul.gNavi a.gNavi01, body.global02 ul.gNavi a.gNavi02, body.global0
 
 .slider {
 	padding: 0;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 	background: #FFF;
 }
 
@@ -313,8 +314,8 @@ body.global01 ul.gNavi a.gNavi01, body.global02 ul.gNavi a.gNavi02, body.global0
 }
 
 .slider__item {
+	padding: 5px;
 	width: 100%;
-	padding: 1em;
 }
 
 .slider__item img {
@@ -418,7 +419,7 @@ body.global01 ul.gNavi a.gNavi01, body.global02 ul.gNavi a.gNavi02, body.global0
 }
 
 .action--button {
-	color: #5c5edc;
+	color: #44C7F4;
 }
 
 .no-touch .action--button:hover {
@@ -437,14 +438,19 @@ body.global01 ul.gNavi a.gNavi01, body.global02 ul.gNavi a.gNavi02, body.global0
 	position: absolute;
 	top: 0;
 	right: 0;
-	padding: 1.85em 2.35em;
+	padding: 0.55em 0.65em;
 	-webkit-transition: opacity .3s, -webkit-transform .3s;
 	transition: opacity .3s, transform .3s;
 	-webkit-transform: translate3d(-5px, 0, 0);
 	transform: translate3d(-5px, 0, 0);
 }
+.heart_count {
+	display: inline-block;	
+	font-size: 86%;
+	margin-left: 2px;	
+}
 
-.no-touch .action--buy {
+/*.no-touch .action--buy {
 	opacity: 0;
 }
 
@@ -452,7 +458,7 @@ body.global01 ul.gNavi a.gNavi01, body.global02 ul.gNavi a.gNavi02, body.global0
 	opacity: 1;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
-}
+}*/
 
 /* Fixed bottom bar */
 
@@ -494,7 +500,7 @@ body.global01 ul.gNavi a.gNavi01, body.global02 ul.gNavi a.gNavi02, body.global0
 #login {
     width: 90px;
     padding: 5px 12px;
-    background-color: #4277EC;
+    background-color: #444444;
     font-weight: 700;
     font-size: 12px;
     -moz-border-radius: 2px;
@@ -620,6 +626,68 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     z-index: 8000;
 }
 
+div#logo {
+    width: 100%;
+    min-width: 1100px;
+    text-align: center;
+}
+
+div#logo a {
+    height: 600px;
+    width: 100%;
+    text-indent: -99999px;
+    display: block;
+}
+
+.cd-fixed-bg.cd-bg-1 {
+    background-image: url("http://courrier.jp/media/2017/02/28220025/wappen_1stani_5-625x352.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+    width: 100%;
+}
+
+.cd-fixed-bg {
+    min-height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.article-content-container {
+    position: relative;
+    border: solid 1px #DEDEDE;
+    margin-top: 25px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #FFF;
+	position: relative;
+	max-width: 1012px;
+	min-width: 1012px;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+
+.article-content-container .article-content {
+    padding: 0 30px;
+    font-size: 14px;
+    line-height: 2em;
+    font-family: "ヒラギノ角ゴ ProN W3","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic ProN",YuGothic,"Yu Gothic",游ゴシック体,游ゴシック,太ゴB101,"Futo Go B101",メイリオ,Meiryo,"ＭＳ Ｐゴシック","ＭＳ ゴシック",sans-serif;
+    background-color: #FFF;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.has-img {
+
+}
+
 .loginpanel .buttons {
     margin: 0 auto;
 }
@@ -642,6 +710,12 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     text-align: center;
     overflow-y: auto;
     height: 100%;
+}
+
+.cd-scrolling-bg {
+	background-image: url(../img/bg_gray.png);	
+	background-color: #FFF;
+	padding-top: 40px;
 }
 
 .modal .dialog {

@@ -10,7 +10,7 @@ try {
     //データーベース接続情報を入力します。
     $dbh = dbSetting();
     // 記事取得
-    $articlesQuery = "SELECT a.title,a.content content,a.price price,a.category category,a_img.path1 a_path1,a_img.path2 a_path2,a_img.path3 a_path3,u.name u_name,u_img.path u_path,c.content c_content from articles a inner join article_images a_img on a.id = a_img.article_id inner join users u on u.id = a.user_id inner join user_images u_img on u_img.id = u.id left join (select article_id ,max(content) content,max(update_date) update_date from coments group by article_id) c on a.id = c.article_id";
+    $articlesQuery = "SELECT a.id a_id,a.title,a.content content,a.price price,a.category category,a.iine_count iine_count,a_img.path1 a_path1,a_img.path2 a_path2,a_img.path3 a_path3,u.name u_name,u_img.path u_path,c.content c_content from articles a inner join article_images a_img on a.id = a_img.article_id inner join users u on u.id = a.user_id inner join user_images u_img on u_img.id = u.id left join (select article_id ,max(content) content,max(update_date) update_date from coments group by article_id) c on a.id = c.article_id";
     $stmt = $dbh->prepare($articlesQuery);
 
     $status = $stmt->execute();
@@ -23,6 +23,7 @@ try {
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
         // 日付フォーマット変換
         $articles .= '<div class="grid__item ' . $result['category'] . '">';
+        $articles .= '<div class="editor"><img src="' . $result['u_path'] . '" width="35" height="35" /></div>';
         $articles .= '<div class="slider">';
         $articles .= '<div class="slider__item">';
         $articles .= '<img src="' . $result['a_path1'] . '"alt="Dummy"/>';
@@ -47,11 +48,11 @@ try {
         $articles .= '<span class="user-comment">' . $result['c_content'] . '</span>';
         $articles .= '</div>';
         $articles .= '</div>';
-        $articles .= '<button class="action action--button action--buy">';
-        $articles .= '<i class="fa fa-heart"></i>';
+        $articles .= '<button class="action action--button action--buy" >';
+        $articles .= '<i class="fa fa-heart" ></i>';
+        $articles .= '<span class="heart_count" onclick="main_interest('.$result["a_id"].');">'.$result['iine_count'].'</span>';
+        $articles .= '<span class="text-hidden"> heart</span>';
         $articles .= '</button>';
-        $articles .= '<input type="hidden" name="favorite">';
-        $articles .= '<input type="hidden" name="coment">';
         $articles .= '</div>';
 
     }
@@ -90,6 +91,7 @@ try {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/modernizr.custom.js"></script>
     <script src="js/until.js"></script>
+    <script src="js/interest.js"></script>
 </head>
 <body>
 <div class="head">
