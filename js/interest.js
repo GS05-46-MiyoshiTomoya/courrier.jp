@@ -1,4 +1,5 @@
 function main_interest(id){
+    console.log('いいね開始');
     var user_id = '#user_id_' + id;
     var interest_count = '#interest_count_' + id;
     var interest_count_self = '#interest_count_self_' + id;
@@ -7,6 +8,7 @@ function main_interest(id){
                 con_id : id,
                 user_id : $(user_id).val()
                };
+    console.log('いいね開始');
     /**
      * Ajax通信メソッド
      * @param type  : HTTP通信の種類

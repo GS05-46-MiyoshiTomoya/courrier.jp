@@ -50,9 +50,10 @@ try {
         $articles .= '</div>';
         $articles .= '<button class="action action--button action--buy" >';
         $articles .= '<i class="fa fa-heart" ></i>';
-        $articles .= '<span class="heart_count" onclick="main_interest('.$result["a_id"].');">'.$result['iine_count'].'</span>';
+        $articles .= '<span id="interest_count_'.$result["a_id"].'" class="heart_count" onclick="main_interest('.$result["a_id"].');">'.$result['iine_count'].'</span>';
         $articles .= '<span class="text-hidden"> heart</span>';
         $articles .= '</button>';
+        $articles .= '<input type="hidden" name="user_id" id="user_id_'.$result['a_id'].'" value="1">';
         $articles .= '</div>';
 
     }
@@ -62,7 +63,6 @@ try {
 } finally {
     $dbh = null;
 }
-
 ?>
 
 <!DOCTYPE html>
