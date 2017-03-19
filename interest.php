@@ -10,14 +10,11 @@ include("until.php");
 //    exit('ParamError');
 //}
 try {
-    //データーベース接続情報を入力します。
-    $dbh = dbSetting();
-
     $con_id = $_POST['con_id'];
     $user_id = $_POST['user_id'];
 
-    $pdo = db_setting();
-    $stmt = $pdo->prepare("SELECT * FROM favorites WHERE con_list_id = :con_list_id AND user_id = :user_id");
+    $pdo = dbSetting();
+    $stmt = $pdo->prepare("SELECT * FROM favorites WHERE article_id = :con_list_id AND user_id = :user_id");
     $stmt->bindValue(':con_list_id', $con_id, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
     $status = $stmt->execute();
@@ -30,9 +27,9 @@ try {
         $row = $stmt->fetch();
         if ($row["count"] == NULL || $row["count"] == "") {
             $count = 1;
-            $pdo = db_setting();
-            $stmt = $pdo->prepare("INSERT INTO favorites(id, user_id, article_id, count, update_date)VALUES(NULL, :user_id, :con_list_id, :count, sysdate())");
-            $stmt->bindValue(':con_list_id', $con_id, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
+            $pdo = dbSetting();
+            $stmt = $pdo->prepare("INSERT INTO favorites(id, user_id, article_id, count, update_date)VALUES(NULL, :user_id, :article_id, :count, sysdate())");
+            $stmt->bindValue(':article_id', $con_id, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
             $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
             $stmt->bindValue(':count', $count, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
             $status = $stmt->execute();
@@ -60,8 +57,8 @@ try {
             }
         }
         //いいねカウント
-        $stmt = $pdo->prepare("SELECT COUNT(*) as cnt FROM favorites WHERE con_list_id = :con_list_id AND count = 1 ");
-        $stmt->bindValue(':con_list_id', $con_id, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
+        $stmt = $pdo->prepare("SELECT COUNT(*) as cnt FROM favorites WHERE article_id = :article_id AND count = 1 ");
+        $stmt->bindValue(':article_id', $con_id, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
         $status = $stmt->execute();
         $row = $stmt->fetch();
         $iine = $row["cnt"];

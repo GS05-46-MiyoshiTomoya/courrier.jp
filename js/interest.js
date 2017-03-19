@@ -9,6 +9,7 @@ function main_interest(id){
                 user_id : $(user_id).val()
                };
     console.log('いいね開始');
+    console.dir(data);
     /**
      * Ajax通信メソッド
      * @param type  : HTTP通信の種類

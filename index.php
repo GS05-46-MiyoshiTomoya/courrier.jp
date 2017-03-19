@@ -90,7 +90,7 @@ try {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/modernizr.custom.js"></script>
     <script src="js/until.js"></script>
-    <script src="js/interest.js"></script>
+    <script src="./js/interest.js"></script>
 </head>
 <body>
 <div class="head">
