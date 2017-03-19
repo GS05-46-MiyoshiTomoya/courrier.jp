@@ -10,7 +10,7 @@ try {
     //データーベース接続情報を入力します。
     $dbh = dbSetting();
     // 記事取得
-        $articlesQuery = "SELECT a.id a_id,a.title,a.content content,a.price price,a.category category,a.iine_count iine_count,a_img.path1 a_path1,a_img.path2 a_path2,a_img.path3 a_path3,u.name u_name,u_img.path u_path,c.content c_content,c_img.path c_path from articles a inner join article_images a_img on a.id = a_img.article_id inner join users u on u.id = a.user_id inner join user_images u_img on u_img.id = u.id left join (select article_id ,user_id,max(content) content,max(update_date) update_date from coments group by article_id) c on a.id = c.article_id left join user_images c_img on c_img.user_id =  c.user_id";
+    $articlesQuery = "SELECT a.id a_id,a.title,a.content content,a.price price,a.category category,a.iine_count iine_count,a_img.path1 a_path1,a_img.path2 a_path2,a_img.path3 a_path3,u.name u_name,u_img.path u_path,c.content c_content,c_img.path c_path from articles a inner join article_images a_img on a.id = a_img.article_id inner join users u on u.id = a.user_id inner join user_images u_img on u_img.id = u.id left join (select article_id ,user_id,max(content) content,max(update_date) update_date from coments group by article_id) c on a.id = c.article_id left join user_images c_img on c_img.user_id =  c.user_id";
     $stmt = $dbh->prepare($articlesQuery);
     $status = $stmt->execute();
     $articles = "";
@@ -41,7 +41,7 @@ try {
         $articles .= '<span class="meta__price">' . $result['price'] . 'pt</span>';
         $articles .= '<div class="item__header clearfix">';
         $articles .= '<span class="item__user-icon">';
-        $articles .= '<img src="'.$result['c_path'].'" height="48" width="48" alt="ジバニャン" class="item__user-icon-img" />';
+        $articles .= '<img src="' . $result['c_path'] . '" height="48" width="48" alt="ジバニャン" class="item__user-icon-img" />';
         $articles .= '</span>';
         $articles .= '<span class="item__user-name">';
         $articles .= '<strong>' . $result['u_name'] . '</strong>';
@@ -51,10 +51,10 @@ try {
         $articles .= '</div>';
         $articles .= '<button class="action action--button action--buy" >';
         $articles .= '<i class="fa fa-heart" ></i>';
-        $articles .= '<span id="interest_count_'.$result["a_id"].'" class="heart_count" onClick="main_interest('.$result["a_id"].');">'.$result['iine_count'].'</span>';
+        $articles .= '<span id="interest_count_' . $result["a_id"] . '" class="heart_count" onClick="main_interest(' . $result["a_id"] . ');">' . $result['iine_count'] . '</span>';
         $articles .= '<span class="text-hidden"> heart</span>';
         $articles .= '</button>';
-        $articles .= '<input type="hidden" name="user_id" id="user_id_'.$result['a_id'].'" value="1">';
+        $articles .= '<input type="hidden" name="user_id" id="user_id_' . $result['a_id'] . '" value="1">';
         $articles .= '</div>';
 
     }
@@ -93,10 +93,25 @@ try {
     <script src="js/modernizr.custom.js"></script>
     <script src="js/until.js"></script>
     <script src="./js/interest.js"></script>
+    <script>
+        $(function () {
+            $("#login").click(function () {
+                $('.modal').css('display', 'block');
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $(".close-btn").click(function () {
+                $('.modal').css('display', 'none');
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="head">
     <p class="align_c"><img src="img/headlogo.png" width="180" height="42" alt="クーリエ・ジャポン |"></p>
+    <div id="login">ログイン</div>
 </div>
 <!-- Bottom bar with filter and cart info -->
 <div class="bar">
@@ -132,6 +147,8 @@ try {
     </section>
     <!-- /grid-->
 </div>
+<div class="modal"> <div class="background"></div> <div class="modal-content-wrapper"> <div class="modal-content dialog"> <img class="close-btn" src="img/close.png">   <div class="loginpanel closable login" style="display: inline-block;"> <div class="buttons"> <div class="form" stlye="top: 120px;"> <input class="username" id="login-username" name="username" placeholder="登録したメールアドレス / ID" type="text"> <input class="password" id="login-password" name="password" placeholder="パスワード" type="password"> <div class="forget-password"></div> <div class="error-message" style="display: none;"></div> <button class="login-btn" type="button">ログイン</button> </div>  </div> </div>
+        </div>
 <!-- /view -->
 <script src="js/isotope.pkgd.min.js"></script>
 <script src="js/flickity.pkgd.min.js"></script>
