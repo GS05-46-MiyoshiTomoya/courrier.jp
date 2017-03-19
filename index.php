@@ -10,7 +10,7 @@ try {
     //データーベース接続情報を入力します。
     $dbh = dbSetting();
     // 記事取得
-    $articlesQuery = "SELECT a.id a_id,a.title,a.content content,a.price price,a.category category,a.iine_count iine_count,a_img.path1 a_path1,a_img.path2 a_path2,a_img.path3 a_path3,u.name u_name,u_img.path u_path,c.content c_content,c_img.path c_path from articles a inner join article_images a_img on a.id = a_img.article_id inner join users u on u.id = a.user_id inner join user_images u_img on u_img.id = u.id left join (select article_id ,user_id,max(content) content,max(update_date) update_date from coments group by article_id) c on a.id = c.article_id left join user_images c_img on c_img.user_id =  c.user_id";
+        $articlesQuery = "SELECT a.id a_id,a.title,a.content content,a.price price,a.category category,a.iine_count iine_count,a_img.path1 a_path1,a_img.path2 a_path2,a_img.path3 a_path3,u.name u_name,u_img.path u_path,c.content c_content,c_img.path c_path from articles a inner join article_images a_img on a.id = a_img.article_id inner join users u on u.id = a.user_id inner join user_images u_img on u_img.id = u.id left join (select article_id ,user_id,max(content) content,max(update_date) update_date from coments group by article_id) c on a.id = c.article_id left join user_images c_img on c_img.user_id =  c.user_id";
     $stmt = $dbh->prepare($articlesQuery);
     $status = $stmt->execute();
     $articles = "";
@@ -35,7 +35,9 @@ try {
         $articles .= '</div>';
         $articles .= '</div>';
         $articles .= '<div class="meta">';
+        $articles .= '<a href="single.html">';
         $articles .= '<h3 class="meta__title">' . $result['title'] . '</h3>';
+        $articles .= '</a>';
         $articles .= '<span class="meta__price">' . $result['price'] . 'pt</span>';
         $articles .= '<div class="item__header clearfix">';
         $articles .= '<span class="item__user-icon">';
