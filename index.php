@@ -10,7 +10,7 @@ try {
     //データーベース接続情報を入力します。
     $dbh = dbSetting();
     // 記事取得
-    $articlesQuery = "SELECT a.title,a.content content,a.price price,a.category category,a_img.path1 a_path1,a_img.path2 a_path2,a_img.path3 a_path3,u.name u_name,u_img.path u_path,c.content c_content from articles a inner join article_images a_img on a.id = a_img.article_id inner join users u on u.id = a.user_id inner join user_iamges u_img on u_img.id = u.id left join (select article_id ,max(content) content,max(update_date) update_date from coments group by article_id) c on a.id = c.article_id";
+    $articlesQuery = "SELECT a.title,a.content content,a.price price,a.category category,a_img.path1 a_path1,a_img.path2 a_path2,a_img.path3 a_path3,u.name u_name,u_img.path u_path,c.content c_content from articles a inner join article_images a_img on a.id = a_img.article_id inner join users u on u.id = a.user_id inner join user_images u_img on u_img.id = u.id left join (select article_id ,max(content) content,max(update_date) update_date from coments group by article_id) c on a.id = c.article_id";
     $stmt = $dbh->prepare($articlesQuery);
 
     $status = $stmt->execute();
