@@ -36,7 +36,7 @@ try {
         $articles .= '</div>';
         $articles .= '<div class="meta">';
         $articles .= '<h3 class="meta__title">' . $result['title'] . '</h3>';
-        $articles .= '<span class="meta__price">' . $result['price'] . '</span>';
+        $articles .= '<span class="meta__price">' . $result['price'] . 'pt</span>';
         $articles .= '<div class="item__header clearfix">';
         $articles .= '<span class="item__user-icon">';
         $articles .= '<img src="./img/jibanyan.jpg" height="48" width="48" alt="ジバニャン" class="item__user-icon-img" />';
@@ -49,7 +49,7 @@ try {
         $articles .= '</div>';
         $articles .= '<button class="action action--button action--buy" >';
         $articles .= '<i class="fa fa-heart" ></i>';
-        $articles .= '<span id="interest_count_'.$result["a_id"].'" class="heart_count" onclick="main_interest('.$result["a_id"].');">'.$result['iine_count'].'</span>';
+        $articles .= '<span id="interest_count_'.$result["a_id"].'" class="heart_count" onClick="main_interest('.$result["a_id"].');">'.$result['iine_count'].'</span>';
         $articles .= '<span class="text-hidden"> heart</span>';
         $articles .= '</button>';
         $articles .= '<input type="hidden" name="user_id" id="user_id_'.$result['a_id'].'" value="1">';
