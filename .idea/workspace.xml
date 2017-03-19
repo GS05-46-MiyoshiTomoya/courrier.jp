@@ -35,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="326" selection-start-line="12" selection-start-column="326" selection-end-line="12" selection-end-column="326" />
+              <caret line="12" column="501" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="501" />
               <folding>
                 <marker date="1489888394000" expanded="true" signature="176:183" ph="SELECT * fro... articles" />
                 <marker date="1489888394000" expanded="true" signature="176:655" ph="SELECT a.tit... articles" />
@@ -227,12 +227,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1489846065742</updated>
-      <workItem from="1489846067012" duration="10005000" />
+      <workItem from="1489846067012" duration="10094000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10005000" />
+    <option name="totallyTimeSpent" value="10094000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -311,7 +311,7 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="326" selection-start-line="12" selection-start-column="326" selection-end-line="12" selection-end-column="326" />
+          <caret line="12" column="501" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="501" />
           <folding>
             <marker date="1489888394000" expanded="true" signature="176:183" ph="SELECT * fro... articles" />
             <marker date="1489888394000" expanded="true" signature="176:655" ph="SELECT a.tit... articles" />
