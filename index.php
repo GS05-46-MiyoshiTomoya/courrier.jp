@@ -10,7 +10,7 @@ try {
     //データーベース接続情報を入力します。
     $dbh = dbSetting();
     // 記事取得
-    $articlesQuery = "SELECT * from articles a inner join article_images a_img on a.id = a_img.article_id";
+    $articlesQuery = "SELECT a.title,a.content content,a.price price,a.category category,a_img.path1 a_path1,a_img.path2 a_path2,a_img.path3 a_path3,u.name u_name,u_img.path u_path,c.content c_content from articles a inner join article_images a_img on a.id = a_img.article_id inner join users u on u.id = a.user_id inner join user_iamges u_img on u_img.id = u.id left join (select article_id ,max(content) content,max(update_date) update_date from coments group by article_id) c on a.id = c.article_id";
     $stmt = $dbh->prepare($articlesQuery);
 
     $status = $stmt->execute();
@@ -25,28 +25,37 @@ try {
         $articles .= '<div class="grid__item ' . $result['category'] . '">';
         $articles .= '<div class="slider">';
         $articles .= '<div class="slider__item">';
-        $articles .= '<img src="' . $result['path1'] . '"alt="Dummy"/>';
+        $articles .= '<img src="' . $result['a_path1'] . '"alt="Dummy"/>';
         $articles .= '</div>';
         $articles .= '<div class="slider__item">';
-        $articles .= '<img src="' . $result['path2'] . '"alt="Dummy"/>';
+        $articles .= '<img src="' . $result['a_path2'] . '"alt="Dummy"/>';
         $articles .= '</div>';
         $articles .= '<div class="slider__item">';
-        $articles .= '<img src="' . $result['path3'] . '"alt="Dummy"/>';
+        $articles .= '<img src="' . $result['a_path3'] . '"alt="Dummy"/>';
         $articles .= '</div>';
         $articles .= '</div>';
         $articles .= '<div class="meta">';
         $articles .= '<h3 class="meta__title">' . $result['title'] . '</h3>';
-        $articles .= '<h3 class="meta__brand">' . $result['brand'] . '</h3>';
         $articles .= '<span class="meta__price">' . $result['price'] . '</span>';
+        $articles .= '<div class="item__header clearfix">';
+        $articles .= '<span class="item__user-icon">';
+        $articles .= '<img src="./img/jibanyan.jpg" height="48" width="48" alt="ジバニャン" class="item__user-icon-img" />';
+        $articles .= '</span>';
+        $articles .= '<span class="item__user-name">';
+        $articles .= '<strong>' . $result['u_name'] . '</strong>';
+        $articles .= '</span>';
+        $articles .= '<span class="user-comment">' . $result['c_content'] . '</span>';
+        $articles .= '</div>';
         $articles .= '</div>';
         $articles .= '<button class="action action--button action--buy">';
         $articles .= '<i class="fa fa-heart"></i>';
         $articles .= '</button>';
-        $articles .= '<input type="hidden" name="article" value="'.$result['id'].'">';
-        $articles .= '<input type="hidden" name="article_user_id" value="'.$result['user_id'].'">';
+//        $articles .= '<input type="hidden" name="article" value="'.$result['id'].'">';
+//        $articles .= '<input type="hidden" name="article_user_id" value="'.$result['user_id'].'">';
         $articles .= '<input type="hidden" name="favorite">';
         $articles .= '<input type="hidden" name="coment">';
         $articles .= '</div>';
+
     }
 } catch (Exception $e) {
     echo "エラー発生: " . htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8') . "";
